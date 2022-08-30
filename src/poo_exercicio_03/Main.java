@@ -4,7 +4,7 @@ package poo_exercicio_03;
  * Crie uma classe para representar uma BombaCombustivel. 
  * A classe BombaCombustivel deve conter os seguintes atributos: 
  * tipo de combustível, valor por litro e quantidade de combustível. 
- * Além desses atributos a classes deve conter os seguintes métodos.
+ * Além desses atributos a classe deve conter os seguintes métodos.
  * a. abastecerPorValor; //método onde é informado o valor a ser abastecido 
  * e mostra a quantidade de litros que foi colocada no veículo
  * b. abastecerPorLitro; // método onde é informado a quantidade em litros 
@@ -20,7 +20,11 @@ package poo_exercicio_03;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		BombaCombustivel bomba = new BombaCombustivel(0, 0, 0);
+		
+		bomba.abastecerPorValor(0, 0);
+		
+		
 
 	}
 

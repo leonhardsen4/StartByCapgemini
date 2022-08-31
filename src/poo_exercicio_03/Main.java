@@ -1,5 +1,7 @@
 package poo_exercicio_03;
 
+import java.util.Scanner;
+
 /*
  * Crie uma classe para representar uma BombaCombustivel. 
  * A classe BombaCombustivel deve conter os seguintes atributos: 
@@ -20,12 +22,53 @@ package poo_exercicio_03;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		int opcao = 0;
+		int tipo = 0;
+		Scanner input = new Scanner(System.in);
 		BombaCombustivel bomba = new BombaCombustivel(0, 0, 0);
 		
-		bomba.abastecerPorValor(0, 0);
-		
-		
-
+		System.out.println("POSTO LÉO");
+		do {
+			System.out.println("\nO que deseja?\n"
+					+ "1 - Carregar Bombas\n"
+					+ "2 - Selecionar tipo de Combustível\n"
+					+ "3 - Abastecer por Valor\n"
+					+ "4 - Abastecer por Litro\n"
+					+ "5 - Alterar Preço/Litro\n"
+					+ "6 - Alterar Quantidade disponível\n"
+					+ "0 - Sair");
+			System.out.print("Informe a opção desejada: ");
+			opcao = input.nextInt();
+			tipo = bomba.alterarCombustivel();
+			
+			switch (opcao) {
+			case 1:
+				bomba.carregarBombas(input.nextInt());
+				break;
+			case 2:
+				bomba.alterarCombustivel();
+				break;
+			case 3:
+				bomba.abastecerPorValor(input.nextInt());
+				break;
+			case 4:
+				bomba.abastecerPorLitro(input.nextInt());
+				break;
+			case 5:
+				bomba.alterarValor(input.nextInt());
+				break;
+			case 6:
+				bomba.alterarQuantidadeCombustivel(input.nextInt());
+				break;
+			case 0:
+				System.out.println("Saindo...");
+				break;
+			default:
+				System.out.println("Entrada inválida.");
+				break;
+			}
+		} while (opcao != 0);
+		input.close();
 	}
-
 }
